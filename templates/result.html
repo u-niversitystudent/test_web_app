@@ -27,11 +27,11 @@
       <b>Validation Completed.</b>
     </h2>
     <div class="results">
-      {% if prediction == 0 %}
+      {% if prediction <= 0.1 %}
       <h1 style="color: green">
           According to our model, the provided transaction is NOT a Fraud transaction.
       </h1>
-      {% elif prediction == 1 %}
+      {% elif prediction > 0.1 %}
       <h2 style="color: red">
           According to our model, this transaction is a Fraud transaction.
       </h2>
