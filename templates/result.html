@@ -27,15 +27,11 @@
       <b>Validation Completed.</b>
     </h2>
     <div class="results">
-      {% if prediction <= 0.1 %}
+      
       <h1 style="color: green">
-          According to our model, the provided transaction is NOT a Fraud transaction.
+          According to our model, there is {{prediction}} % chance this is a fraud .
       </h1>
-      {% elif prediction > 0.1 %}
-      <h2 style="color: red">
-          According to our model, this transaction is a Fraud transaction.
-      </h2>
-      {% endif %}
+    
     </div>
     <a href="/">
       <button class="btn-info">Retest</button>

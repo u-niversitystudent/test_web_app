@@ -3,7 +3,7 @@ import pandas as pd, numpy as np
 import pickle
 
 # load the model from disk
-filename = 'model_pickle.pkl'
+filename = 'model_pickle2.pkl'
 clf = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def predict():
 		message = [float(x) for x in me.split()]
 		vect = np.array(message).reshape(1, -1)
 		my_prediction = clf.predict(vect)
-	return render_template('result.html',prediction = my_prediction)
+	return render_template('result.html',prediction = my_prediction[0])
 
 
 if __name__ == '__main__':
